@@ -217,7 +217,7 @@ const Home = () => {
 
                 <div className="bg-slate-100 container mx-auto px-5 lg:px-12 py-4">
                     <div className="flex items-center justify-between">
-                        <h1 className="text-2xl font-bold">All Category</h1>
+                        <h1 className="text-2xl font-bold">All Itwms</h1>
 
                     </div>
                     <div className="mt-8 bg-white p-7 rounded-xl">
@@ -269,7 +269,7 @@ const Home = () => {
                                                 <td className="">
                                                     <div className="flex items-center ">
 
-                                                        <Link to={``}>
+                                                        <Link to={`/allItems/${allItem._id}`}>
 
                                                             <label
                                                                 className="w-8 h-8 bg-blue-200 inline-block rounded-full text-center cursor-pointer group hover:bg-blue-500 duration-300 mr-1"
