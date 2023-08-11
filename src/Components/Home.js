@@ -17,7 +17,7 @@ const Home = () => {
     } = useQuery({
         queryKey: ['allItems'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5001/allItems')
+            const res = await fetch('https://server-omega-ebon-23.vercel.app/allItems')
             const data = await res.json()
             return data
         }
@@ -27,12 +27,12 @@ const Home = () => {
     const [allCategory, setAllCategory] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5001/allCategory`)
+        fetch(`https://server-omega-ebon-23.vercel.app/allCategory`)
             .then(Response => Response.json())
             .then(data => setAllCategory(data))
     }, [])
 
-    // http://localhost:5001/allItems
+    // https://server-omega-ebon-23.vercel.app/allItems
 
     const handleAddItems = event => {
         event.preventDefault()
@@ -49,7 +49,7 @@ const Home = () => {
         const addProducts = {
             name, description, active, time, category
         }
-        fetch('http://localhost:5001/allItems', {
+        fetch('https://server-omega-ebon-23.vercel.app/allItems', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -76,7 +76,7 @@ const Home = () => {
         const proceed = window.confirm('Are You Sure delete')
 
         if (proceed) {
-            fetch(`http://localhost:5001/allItems/${id}`, {
+            fetch(`https://server-omega-ebon-23.vercel.app/allItems/${id}`, {
                 method: "DELETE",
 
             })

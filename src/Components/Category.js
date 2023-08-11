@@ -16,7 +16,7 @@ const Category = () => {
     } = useQuery({
         queryKey: ['allCategory'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5001/allCategory')
+            const res = await fetch('https://server-omega-ebon-23.vercel.app/allCategory')
             const data = await res.json()
             return data
         }
@@ -37,7 +37,7 @@ const Category = () => {
         const addProducts = {
             name, description, active, time
         }
-        fetch('http://localhost:5001/allCategory', {
+        fetch('https://server-omega-ebon-23.vercel.app/allCategory', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -64,7 +64,7 @@ const Category = () => {
         const proceed = window.confirm('Are You Sure delete')
 
         if (proceed) {
-            fetch(`http://localhost:5001/allCategory/${id}`, {
+            fetch(`https://server-omega-ebon-23.vercel.app/allCategory/${id}`, {
                 method: "DELETE",
 
             })

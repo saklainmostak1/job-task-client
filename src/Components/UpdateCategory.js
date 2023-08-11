@@ -16,7 +16,7 @@ const UpdateCategory = () => {
     const [updateCategory, setUpdateCategory] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5001/allCategory/${id}`)
+        fetch(`https://server-omega-ebon-23.vercel.app/allCategory/${id}`)
             .then(Response => Response.json())
             .then(data => setUpdateCategory(data))
     }, [id])
@@ -26,7 +26,7 @@ const UpdateCategory = () => {
 
     const handleEditHome = event => {
         event.preventDefault()
-        fetch(`http://localhost:5001/allCategory/${updateCategory._id}`, {
+        fetch(`https://server-omega-ebon-23.vercel.app/allCategory/${updateCategory._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

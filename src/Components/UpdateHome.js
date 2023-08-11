@@ -18,7 +18,7 @@ const UpdateHome = () => {
     } = useQuery({
         queryKey: ['allCategory'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5001/allCategory')
+            const res = await fetch('https://server-omega-ebon-23.vercel.app/allCategory')
             const data = await res.json()
             return data
         }
@@ -29,7 +29,7 @@ const UpdateHome = () => {
     const [updateCategory, setUpdateCategory] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5001/allItems/${id}`)
+        fetch(`https://server-omega-ebon-23.vercel.app/allItems/${id}`)
             .then(Response => Response.json())
             .then(data => setUpdateCategory(data))
     }, [id])
@@ -39,7 +39,7 @@ const UpdateHome = () => {
 
     const handleEditHome = event => {
         event.preventDefault()
-        fetch(`http://localhost:5001/allItems/${updateCategory._id}`, {
+        fetch(`https://server-omega-ebon-23.vercel.app/allItems/${updateCategory._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
